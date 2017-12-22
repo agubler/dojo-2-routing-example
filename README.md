@@ -1,4 +1,6 @@
-# routing-rewrite
+# routing-example
+
+Running [here](https://agubler.github.io/dojo-2-routing-example)
 
 This project was generated with the [Dojo CLI](https://github.com/dojo/cli) & [Dojo CLI create app command](https://github.com/dojo/cli-create-app).
 
