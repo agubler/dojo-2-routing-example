@@ -19,12 +19,12 @@ export class App extends WidgetBase {
 			v('div', [
 				w(Link, { styles: linkStyle, to: 'home' }, [ 'Home' ]),
 				w(Link, { styles: linkStyle, to: 'foo' }, [ 'Foo' ]),
-				w(Link, { styles: linkStyle, isOutlet: false, to: '#foo/error' }, [ 'Foo Error' ]),
+				w(Link, { styles: linkStyle, isOutlet: false, to: '#foo/no-match' }, [ 'Foo Matches but next path does not' ]),
 				w(Link, { styles: linkStyle, to: 'bar' }, [ 'Bar' ]),
 				w(Link, { styles: linkStyle, to: 'baz' }, [ 'Baz' ]),
 				w(Link, { styles: linkStyle, to: 'foobar' }, [ 'FooBar' ]),
 				w(Link, { styles: linkStyle, to: 'foobaz' }, [ 'FooBaz' ]),
-				w(Link, { styles: linkStyle, isOutlet: false, to: '#blah' }, [ 'Error' ])
+				w(Link, { styles: linkStyle, isOutlet: false, to: '#blah' }, [ 'Unknown Route' ])
 			]),
 			w(HomeOutlet, {}),
 			w(FooOutlet, {}),

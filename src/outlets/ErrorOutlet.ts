@@ -5,7 +5,7 @@ import { MapParams } from 'dojo-2-router/interfaces';
 
 class Widget extends WidgetBase {
 	render() {
-		return v('div', [ 'Error' ]);
+		return v('div', [ 'Unknown!' ]);
 	}
 }
 
