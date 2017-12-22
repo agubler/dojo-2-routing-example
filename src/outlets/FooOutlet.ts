@@ -3,27 +3,43 @@ import { WidgetBase } from '@dojo/widget-core/WidgetBase';
 import { Outlet } from 'dojo-2-router/Outlet';
 import { MapParams } from 'dojo-2-router/interfaces';
 
-class Widget extends WidgetBase {
+class Widget extends WidgetBase<any> {
 	render() {
-		return v('div', [ 'Exact Foo' ]);
+		return v('div', [
+			v('div', [ 'Outlet - Exact Foo' ]),
+			v('div', [ '' ]),
+			v('div', [ `Params ${JSON.stringify(this.properties.params)}` ]),
+			v('div', [ `Query Params ${JSON.stringify(this.properties.queryParams)}` ]),
+		 ]);
+	}
+}
+class PartialWidget extends WidgetBase<any> {
+	render() {
+		return v('div', [
+			v('div', [ 'Outlet - Partial Foo' ]),
+			v('div', [ '' ]),
+			v('div', [ `Params ${JSON.stringify(this.properties.params)}` ]),
+			v('div', [ `Query Params ${JSON.stringify(this.properties.queryParams)}` ]),
+		 ]);
 	}
 }
 
-class PartialWidget extends WidgetBase {
+class Error extends WidgetBase<any> {
 	render() {
-		return v('div', [ 'Partial Foo' ]);
-	}
-}
-
-class Error extends WidgetBase {
-	render() {
-		return v('div', [ 'Foo Error' ]);
+		return v('div', [
+			v('div', [ 'Outlet - Error Foo' ]),
+			v('div', [ '' ]),
+			v('div', [ `Params ${JSON.stringify(this.properties.params)}` ]),
+			v('div', [ `Query Params ${JSON.stringify(this.properties.queryParams)}` ]),
+		 ]);
 	}
 }
 
 const mapParams: MapParams = ({ queryParams, params }) => {
-	console.log(queryParams);
-	console.log(params);
+	return {
+		queryParams,
+		params
+	};
 };
 
 const onEnter = () => {

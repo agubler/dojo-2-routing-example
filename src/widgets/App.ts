@@ -16,15 +16,16 @@ const linkStyle = {
 export class App extends WidgetBase {
 	render() {
 		return v('div', [
-			v('div', [
+			v('div', { styles: linkStyle }, [
 				w(Link, { styles: linkStyle, to: 'home' }, [ 'Home' ]),
 				w(Link, { styles: linkStyle, to: 'foo' }, [ 'Foo' ]),
 				w(Link, { styles: linkStyle, isOutlet: false, to: '#foo/no-match' }, [ 'Foo Matches but next path does not' ]),
 				w(Link, { styles: linkStyle, to: 'bar' }, [ 'Bar' ]),
 				w(Link, { styles: linkStyle, to: 'baz' }, [ 'Baz' ]),
-				w(Link, { styles: linkStyle, to: 'foobar' }, [ 'FooBar' ]),
+				w(Link, { styles: linkStyle, isOutlet: false, to: '#baz?param1=1&param2=1' }, [ 'Baz with Params' ]),
+				w(Link, { styles: linkStyle, to: 'foobar', params: { bar: 'bazza' } }, [ 'FooBar' ]),
 				w(Link, { styles: linkStyle, to: 'foobaz' }, [ 'FooBaz' ]),
-				w(Link, { styles: linkStyle, isOutlet: false, to: '#blah' }, [ 'Unknown Route' ])
+				w(Link, { styles: linkStyle, isOutlet: false, to: '#blah?param=hello' }, [ 'Unknown Route' ])
 			]),
 			w(HomeOutlet, {}),
 			w(FooOutlet, {}),

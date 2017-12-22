@@ -23,7 +23,7 @@ const routerConfig = [
 				outlet: 'foobar',
 				path: '{bar}/bar',
 				defaultParams: {
-					bar: 'bummer'
+					bar: 'default-bar-param'
 				},
 				defaultRoute: true
 			},
