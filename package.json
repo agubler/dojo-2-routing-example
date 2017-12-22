@@ -8,7 +8,7 @@
     "@dojo/shim": "~0.2.2",
     "@dojo/widget-core": "~0.3.0",
     "@dojo/widgets": "~0.2.1",
-    "dojo-2-router": "file:./deps/dojo-2-router-1.0.0-rc.1.tgz"
+    "dojo-2-router": "file:deps/dojo-2-router-1.0.0-rc.1.tgz"
   },
   "devDependencies": {
     "@dojo/cli-build-webpack": "~0.2.0",

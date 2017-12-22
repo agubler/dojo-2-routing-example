@@ -5,7 +5,13 @@ import { MapParams } from 'dojo-2-router/interfaces';
 
 class Widget extends WidgetBase {
 	render() {
-		return v('div', [ 'Foo' ]);
+		return v('div', [ 'Exact Foo' ]);
+	}
+}
+
+class PartialWidget extends WidgetBase {
+	render() {
+		return v('div', [ 'Partial Foo' ]);
 	}
 }
 
@@ -28,4 +34,8 @@ const onExit = () => {
 	console.log('exiting foo');
 }
 
-export const FooOutlet = Outlet({ main: Widget, error: Error }, 'foo', { mapParams, onEnter, onExit }, 'router');
+export const FooOutlet = Outlet({
+	index: Widget,
+	main: PartialWidget,
+	error: Error
+}, 'foo', { mapParams, onEnter, onExit }, 'router');
